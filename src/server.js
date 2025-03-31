@@ -31,7 +31,7 @@ app.post("/asana", async (req, res) => {
   try {
       const formData = req.body;
       if (req.files && req.files.anexo) {
-        formData.anexo = req.files.anexo;
+        formData.anexo = Array.isArray(req.files.anexo) ? req.files.anexo : [req.files.anexo];
       }
       console.log("Dados recebidos no servidor:", formData);
   

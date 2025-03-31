@@ -1,44 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>NeoDesk - Gestão de Solicitações para Produto</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="NeoDesk - Gestão de Solicitações para Produto">
-    <meta property="og:description" content="O NeoDesk é a porta de entrada para registros e solicitações da equipe de produto do Sistema Verdes Mares.">
+    <meta property="og:description"
+        content="O NeoDesk é a porta de entrada para registros e solicitações da equipe de produto do Sistema Verdes Mares.">
+    <meta property="og:image" content="/img/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/node_modules/conversational-form/dist/conversational-form.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/conversational-form@1.0.2/dist/conversational-form.min.css">
+
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MHRB4D32');</script>
 </head>
+
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHRB4D32" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
     <div class="container">
         <div class="description">
-            <h1>Olá, eu sou o <strong>NeoDesk</strong>! 🤖</h1>
-            <p><strong>Registre sua solicitação</strong> e vamos <strong>resolver isso juntos</strong>!</p>
+            <img src="/img/avatar.png" alt="Avatar do NeoDesk" width="40" height="40">
+            <h1>Olá, eu sou o <strong>Neo</strong>!</h1>
+            <p><strong>Registre sua solicitação</strong> e vamos <strong>resolver isso juntos.</strong></p>
         </div>
         <div id="cf-context">
             <form id="form">
-                <input cf-questions="Para começarmos, cole o link do sistema onde você encontrou o problema. Isso nos ajuda a identifica-lo rapidamente!" type="text" name="link" cf-input-placeholder="Cole o link do sistema..." tabindex="-1" cf-error="Este campo é obrigatório!" required>
-                <fieldset cf-questions="Qual é o tipo de problema?" cf-input-placeholder="Escolha uma das opções acima..." cf-error="Este campo é obrigatório!" required>
-                    <input type="radio" name="tipo" value="1209389467800061" cf-label="Algo aparece errado na página" tabindex="-1">
-                    <input type="radio" name="tipo" value="1209389467800062" cf-label="O sistema não faz o que deveria" tabindex="-1">
-                    <input type="radio" name="tipo" value="1209389467800063" cf-label="Lentidão, travamentos" tabindex="-1">
+                <input
+                    cf-questions="Cole o link ou informe exatamente em qual sistema, site ou produto deseja registrar sua solicitação."
+                    type="text" name="link" cf-input-placeholder="Cole o link do sistema..." tabindex="-1"
+                    cf-error="Este campo é obrigatório!" required>
+                <fieldset cf-questions="Qual situação você está relatando?"
+                    cf-input-placeholder="Escolha uma das opções acima..." cf-error="Este campo é obrigatório!"
+                    required>
+                    <input type="radio" name="tipo" value="1209389467800061" cf-label="Algo aparece errado na página"
+                        tabindex="-1">
+                    <input type="radio" name="tipo" value="1209389467800062" cf-label="O sistema não faz o que deveria"
+                        tabindex="-1">
+                    <input type="radio" name="tipo" value="1209389467800063" cf-label="Lentidão, travamentos"
+                        tabindex="-1">
                     <input type="radio" name="tipo" value="1209265702520456" cf-label="Outro" tabindex="-1">
                 </fieldset>
-                <input cf-questions="Conte-nos o que você precisa ou qual problema deseja relatar:" type="text" name="descricao" cf-input-placeholder="Descreva brevemente o problema..." tabindex="-1">
-                <fieldset cf-questions="O quanto isso está atrapalhando seu trabalho?" cf-input-placeholder="Escolha uma das opções acima..." cf-error="Este campo é obrigatório!" required>
-                    <input type="radio" name="impacto" value="1209265702520459" cf-label="Bloqueia atividades essenciais" tabindex="-1">
-                    <input type="radio" name="impacto" value="1209265702520460" cf-label="Prejudica, mas consigo continuar" tabindex="-1">
-                    <input type="radio" name="impacto" value="1209265702520461" cf-label="Incômodo, mas tem solução alternativa" tabindex="-1">
-                    <input type="radio" name="impacto" value="1209389467800064" cf-label="Não impacta, só queria informar" tabindex="-1">
+                <fieldset cf-questions="Com que frequência essa situação ocorre ou ocorreu?"
+                    cf-input-placeholder="Escolha uma das opções acima..." cf-error="Este campo é obrigatório!"
+                    required>
+                    <input type="radio" name="frequencia" value="1209465592565002" cf-label="Aconteceu apenas uma vez"
+                        tabindex="-1">
+                    <input type="radio" name="frequencia" value="1209465592565003" cf-label="Às vezes" tabindex="-1">
+                    <input type="radio" name="frequencia" value="1209465592565004" cf-label="Sempre" tabindex="-1">
                 </fieldset>
-                <input cf-questions="Envie um print da tela para entendermos melhor o problema:" type="file" name="anexo" accept="image/*" cf-input-placeholder="Clique no botão para anexar uma imagem..." tabindex="-1" cf-error="Este campo é obrigatório!">
-                <input cf-questions="Qual é o seu e-mail para contato?" type="email" name="email" cf-input-placeholder="Digite seu e-mail..." tabindex="-1" cf-error="Este campo é obrigatório!" required>
-                <fieldset cf-questions="Quem é o seu gestor imediato?" cf-input-placeholder="Escolha uma das opções acima..." cf-error="Este campo é obrigatório!" required>
+                <input cf-questions="Descreva o que você fez até o erro aparecer, passo a passo." type="text"
+                    name="descricao" cf-input-placeholder="Descreva brevemente o problema..." tabindex="-1">
+                <fieldset cf-questions="O quanto isso está atrapalhando seu trabalho?"
+                    cf-input-placeholder="Escolha uma das opções acima..." cf-error="Este campo é obrigatório!"
+                    required>
+                    <input type="radio" name="impacto" value="1209265702520459"
+                        cf-label="Bloqueia atividades essenciais" tabindex="-1">
+                    <input type="radio" name="impacto" value="1209265702520460"
+                        cf-label="Prejudica, mas consigo continuar" tabindex="-1">
+                    <input type="radio" name="impacto" value="1209265702520461"
+                        cf-label="Incômodo, mas tem solução alternativa" tabindex="-1">
+                    <input type="radio" name="impacto" value="1209389467800064"
+                        cf-label="Não impacta, só queria informar" tabindex="-1">
+                </fieldset>
+                <input cf-questions="Envie um print da tela para entendermos melhor o problema:" type="file"
+                    name="anexo" accept="image/*"
+                    cf-input-placeholder="Clique no botão para anexar uma ou mais imagens..." tabindex="-1"
+                    cf-error="Este campo é obrigatório!" multiple>
+                <input cf-questions="Qual é o seu e-mail para contato?" type="email" name="email"
+                    cf-input-placeholder="Digite seu e-mail..." tabindex="-1" cf-error="Este campo é obrigatório!"
+                    required>
+                <fieldset cf-questions="Quem é o seu gestor imediato?"
+                    cf-input-placeholder="Escolha uma das opções acima..." cf-error="Este campo é obrigatório!"
+                    required>
                     <input type="radio" name="gestor" value="1209309153842444" cf-label="Ivila Bessa" tabindex="-1">
-                    <input type="radio" name="gestor" value="1209309153842445" cf-label="Arenusa Barros Goulart" tabindex="-1">
+                    <input type="radio" name="gestor" value="1209309153842445" cf-label="Arenusa Barros Goulart"
+                        tabindex="-1">
                     <input type="radio" name="gestor" value="1209317734322052" cf-label="Tayro Mendonça" tabindex="-1">
                     <input type="radio" name="gestor" value="1209364686976672" cf-label="Luis Henrique" tabindex="-1">
                 </fieldset>
@@ -48,6 +99,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/node_modules/conversational-form/dist/conversational-form.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.2/dist/conversational-form.min.js"
+        crossorigin></script>
 </body>
+
 </html>

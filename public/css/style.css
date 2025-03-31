@@ -40,3 +40,7 @@ body {
     justify-content: center;
     position: relative;
 }
+
+cf-chat-response.robot thumb {
+    background-image: url('/img/avatar.png') !important;
+}
