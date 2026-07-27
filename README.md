@@ -1,4 +1,4 @@
-# Formulário Conversacional - NeoDesk
+# Formulário Conversacional
 
 Este é um formulário conversacional simples desenvolvido com a biblioteca Conversational Form. O objetivo é permitir que os usuários registrem demandas ou problemas de forma interativa.
 
